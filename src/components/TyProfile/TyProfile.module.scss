@@ -1,0 +1,12 @@
+.ty-profile {
+  display: flex;
+  gap: map.get($spaces, "xs");
+
+  &__text {
+    display: block;
+
+    &-name {
+      font-size: map.get($spaces, "lg");
+    }
+  }
+}
