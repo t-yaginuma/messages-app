@@ -1,95 +1,67 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
+
+import TyInput from "@/components/TyInput/TyInput";
+import TyLabel from "@/components/TyLabel/TyLabel";
+import TyHeading from "@/components/TyHeading/TyHeading";
+import TyFileUpload from "@/components/TyFileUpload/TyFileUpload";
+import TyButton from "@/components/TyButton/TyButton";
+import TyCheckbox from "@/components/TyCheckbox/TyCheckbox";
+import TyForm from "@/components/TyForm/TyForm";
+import TyMessage from "@/components/TyMessage/TyMessage";
+import TyCircleImage from "@/components/TyCircleImage/TyCircleImage";
+import TyProfile from "@/components/TyProfile/TyProfile";
+import { db } from "@/app/_lib/firebase";
+import { useEffect } from "react";
+import TyPopper from "@/components/TyPopper/TyPopper";
+// import { collection, doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function Home() {
+  const text = async () => {
+    const docRef = doc(db, "cities", "SF");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  };
+
+  // text();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+    <>
+      <div>
+        ログアウト
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          <div>{/* <TyCircleImage /> */}</div>
+          <span>Toru Yaginuma</span>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <TyPopper />
+      <TyHeading type="h1" label="メッセージアプリ" />
+      <div>
+        <TyProfile
+          src="https://placehold.jp/32x32.png"
+          name="Toru Yaginuma"
+          mail="toru45s@gmail.com"
+          gender="M"
         />
+        <TyMessage text="ホゲホゲ" />
+        <TyMessage text="ホゲホゲ" />
+        <TyMessage text="ホゲホゲ" />
+        <TyMessage text="ホゲホゲ" />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <TyForm>
+        <TyLabel label="メッセージ">
+          <TyInput />
+        </TyLabel>
+        <TyButton label="登録" />
+      </TyForm>
+    </>
   );
 }
