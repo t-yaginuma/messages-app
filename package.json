@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.20",
     "@types/firebase": "^3.2.1",
     "firebase": "^10.12.5",
     "firebase-admin": "^12.3.0",
