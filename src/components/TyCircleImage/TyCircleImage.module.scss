@@ -1,0 +1,16 @@
+.ty-circle-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  padding: 1px;
+
+  &__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
