@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "placehold.jp",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+        port: "",
+      },
     ],
   },
   sassOptions: {
