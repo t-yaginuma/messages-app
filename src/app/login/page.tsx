@@ -1,20 +1,14 @@
 "use client";
-import React, { useState } from "react";
 
-import Image from "next/image";
-import styles from "./page.module.css";
-import Link from "next/link";
+import React, { useState } from "react";
 
 import TyInput from "@/components/TyInput/TyInput";
 import TyLabel from "@/components/TyLabel/TyLabel";
 import TyHeading from "@/components/TyHeading/TyHeading";
 import TyButton from "@/components/TyButton/TyButton";
-import TyCheckbox from "@/components/TyCheckbox/TyCheckbox";
-import TyFileUpload from "@/components/TyFileUpload/TyFileUpload";
 import TyForm from "@/components/TyForm/TyForm";
 import { auth } from "@/app/_lib/firebase";
-import { collection, doc, setDoc, addDoc } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -23,13 +17,14 @@ export default function Home() {
   const [password, setPassword] = useState("");
 
   const submit = async () => {
+    console.log("submit");
+
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
         router.push("/");
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
