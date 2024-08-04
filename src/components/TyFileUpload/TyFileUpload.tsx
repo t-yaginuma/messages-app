@@ -1,8 +1,18 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
 export default function TyFileUpload(props: Props) {
-  // return<input type="file" name="test" required />
-  return <input type="file" name="test" />;
+  const { onChange } = props;
+
+  return (
+    <input
+      type="file"
+      name="image"
+      accept=".png,.jpeg,.jpg"
+      onChange={onChange}
+    />
+  );
 }
