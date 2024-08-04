@@ -12,7 +12,7 @@ export default function TyMessage(props: Props) {
     <article>
       <TyProfile src="https://placehold.jp/32x32.png" name="Toru Yaginuma" />
       {text}
-      <div>{dayjs().format()}</div>
+      <div>{dayjs().format("YYYY-MM-DD hh:mm")}</div>
     </article>
   );
 }
