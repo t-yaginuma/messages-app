@@ -10,7 +10,7 @@ export default function TyInput(props: Props) {
   return (
     <div>
       <span>{label}</span>
-      {children}
+      <div>{children}</div>
     </div>
   );
 }
