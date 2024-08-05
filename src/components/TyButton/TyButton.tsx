@@ -2,15 +2,16 @@ import React from "react";
 
 type Props = {
   label: string;
+  type: "submit" | "button";
   isDisabled?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export default function TyButton(props: Props) {
-  const { label, onClick, isDisabled } = props;
+  const { label, type, onClick, isDisabled } = props;
 
   return (
-    <button onClick={onClick} disabled={isDisabled}>
+    <button type={type} onClick={onClick} disabled={isDisabled}>
       {label}
     </button>
   );
