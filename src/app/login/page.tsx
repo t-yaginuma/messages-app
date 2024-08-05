@@ -7,11 +7,11 @@ import TyHeading from "@/components/TyHeading/TyHeading";
 import TyButton from "@/components/TyButton/TyButton";
 import TyForm from "@/components/TyForm/TyForm";
 import TyText from "@/components/TyText/TyText";
+import TyTextLink from "@/components/TyTextLink/TyTextLink";
 import TyDiv from "@/components/TyDiv/TyDiv";
 import { auth } from "@/app/_lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 export default function Login() {
   const router = useRouter();
@@ -64,7 +64,7 @@ export default function Login() {
         <TyButton type="submit" label="ログイン" />
       </TyForm>
       <TyDiv>
-        <Link href="/register">新規登録する</Link>
+        <TyTextLink href="/register" text="新規登録する" />
       </TyDiv>
     </>
   );
