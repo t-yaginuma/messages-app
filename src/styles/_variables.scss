@@ -1,5 +1,4 @@
 $round-md: 0.5rem;
-$prefix: ty;
 
 $spaces: (
   "xs": 0.5rem,
@@ -15,4 +14,8 @@ $fontSize: (
   "md": 1rem,
   "lg": 1.25rem,
   "xl": 1.5rem,
+);
+
+$color: (
+  "error": red,
 );
