@@ -2,20 +2,19 @@ import React from "react";
 import TyCircleImage from "@/components/TyCircleImage/TyCircleImage";
 import styles from "@/components/TyProfile/TyProfile.module.scss";
 import classNames from "classnames";
-
+import { genders } from "@/Constants";
 type Props = {
-  src?: string;
+  image?: string;
   name?: string;
   mail?: string;
   gender?: string;
 };
 
 export default function TyInput(props: Props) {
-  const { name, src, mail, gender } = props;
+  const { name, image, mail, gender } = props;
   return (
     <div className={styles["ty-profile"]}>
-      {src && <TyCircleImage src={src} alt={name!} />}
-
+      {image && <TyCircleImage src={image} alt={name!} />}
       <div>
         {name && (
           <span
@@ -28,7 +27,11 @@ export default function TyInput(props: Props) {
           </span>
         )}
         {mail && <span className={styles["ty-profile__text"]}>{mail}</span>}
-        {gender && <span className={styles["ty-profile__text"]}>{gender}</span>}
+        {gender && (
+          <span className={styles["ty-profile__text"]}>
+            {genders[gender as "0" | "1" | "2"]}
+          </span>
+        )}
       </div>
     </div>
   );
