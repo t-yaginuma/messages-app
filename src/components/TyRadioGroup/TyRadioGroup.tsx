@@ -2,12 +2,14 @@ import React from "react";
 
 type Props = {
   options: { label: string; id: string }[];
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  name?: string;
+  defaultValue?: string;
+  isRequired?: boolean;
 };
 
 export default function TyInput(props: Props) {
-  const { options, value, onChange } = props;
+  const { options, name, defaultValue, isRequired } = props;
   return (
     <div>
       {options.map((item, index) => {
@@ -16,10 +18,10 @@ export default function TyInput(props: Props) {
             <input
               type="radio"
               id={item.id}
-              name="radio"
+              name={name}
               value={item.id}
-              checked={value === item.id}
-              onChange={onChange}
+              required={isRequired}
+              defaultChecked={item.id === defaultValue}
             />
             {item.label}
           </label>
