@@ -1,5 +1,5 @@
 import React from "react";
-import style from "@/components/TyDiv/TyDIv.module.scss";
+import style from "@/components/TyDiv/TyDiv.module.scss";
 import classNames from "classnames";
 
 type Props = {
