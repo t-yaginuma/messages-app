@@ -1,7 +1,6 @@
 import React from "react";
-import style from "@/components/TyText/TyText.module.scss";
+import style from "@/components/TyDiv/TyDIv.module.scss";
 import classNames from "classnames";
-import { isErrored } from "stream";
 
 type Props = {
   children: React.ReactNode;
@@ -11,12 +10,12 @@ export default function TyDiv(props: Props) {
   const { children } = props;
 
   return (
-    <p
+    <div
       className={classNames({
         [style["ty-div"]]: true,
       })}
     >
       {children}
-    </p>
+    </div>
   );
 }
