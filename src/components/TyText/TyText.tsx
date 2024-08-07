@@ -5,7 +5,7 @@ import { isErrored } from "stream";
 
 type Props = {
   children: React.ReactNode;
-  isError: boolean;
+  isError?: boolean;
 };
 
 export default function TyText(props: Props) {
