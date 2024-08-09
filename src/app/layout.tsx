@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "@/styles/_reset.scss";
 
 export const metadata: Metadata = {
