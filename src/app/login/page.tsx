@@ -9,9 +9,12 @@ import TyForm from "@/components/TyForm/TyForm";
 import TyText from "@/components/TyText/TyText";
 import TyTextLink from "@/components/TyTextLink/TyTextLink";
 import TyDiv from "@/components/TyDiv/TyDiv";
+import TyCard from "@/components/TyCard/TyCard";
+import TyStack from "@/components/TyStack/TyStack";
 import { auth } from "@/app/_lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import TyMain from "@/components/TyMain/TyMain";
 
 export default function Login() {
   const router = useRouter();
@@ -42,30 +45,39 @@ export default function Login() {
 
   return (
     <>
-      <TyHeading type="h1" label="ログイン" />
-      <TyForm onSubmit={submit}>
-        <TyLabel label="メールアドレス">
-          <TyInput
-            type="email"
-            name="email"
-            isRequired
-            isError={!!errorMessage}
-          />
-        </TyLabel>
-        <TyLabel label="パスワード">
-          <TyInput
-            type="password"
-            name="password"
-            isRequired
-            isError={!!errorMessage}
-          />
-        </TyLabel>
-        {errorMessage && <TyText isError>{errorMessage}</TyText>}
-        <TyButton type="submit" label="ログイン" />
-      </TyForm>
-      <TyDiv>
-        <TyTextLink href="/register" text="新規登録する" />
-      </TyDiv>
+      <TyMain isContentCenter>
+        {" "}
+        <TyCard>
+          <TyStack gap="lg">
+            <TyHeading type="h1" label="ログイン" />
+            <TyForm onSubmit={submit}>
+              <TyStack gap="md">
+                <TyLabel label="メールアドレス">
+                  <TyInput
+                    type="email"
+                    name="email"
+                    isRequired
+                    isError={!!errorMessage}
+                  />
+                </TyLabel>
+                <TyLabel label="パスワード">
+                  <TyInput
+                    type="password"
+                    name="password"
+                    isRequired
+                    isError={!!errorMessage}
+                  />
+                </TyLabel>
+                {errorMessage && <TyText isError>{errorMessage}</TyText>}
+                <TyButton type="submit" label="ログイン" />
+              </TyStack>
+            </TyForm>
+            <TyDiv>
+              <TyTextLink href="/register" text="新規登録する" />
+            </TyDiv>
+          </TyStack>
+        </TyCard>
+      </TyMain>
     </>
   );
 }
