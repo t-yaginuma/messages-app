@@ -1,4 +1,8 @@
-$round-md: 0.5rem;
+$rounds: (
+  "sm": 0.25rem,
+  "md": 0.5rem,
+  "lg": 0.5rem,
+);
 
 $spaces: (
   "xs": 0.5rem,
@@ -8,7 +12,7 @@ $spaces: (
   "xl": 1.5rem,
 );
 
-$fontSize: (
+$fontSizes: (
   "xs": 0.5rem,
   "sm": 0.75rem,
   "md": 1rem,
@@ -16,6 +20,14 @@ $fontSize: (
   "xl": 1.5rem,
 );
 
-$color: (
+$fontWeight: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+$colors: (
   "error": red,
+  "text": black,
+  "link-text": blue,
 );
