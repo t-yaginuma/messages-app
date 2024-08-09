@@ -1,0 +1,13 @@
+.ty-heading {
+  font-weight: map-get($fontWeight, "bold");
+
+  &--h1 {
+    font-size: map-get($fontSizes, "xl");
+  }
+  &--h2 {
+    font-size: map-get($fontSizes, "lg");
+  }
+  &--h3 {
+    font-size: map-get($fontSizes, "md");
+  }
+}
