@@ -1,0 +1,16 @@
+.ty-stack {
+  display: flex;
+  flex-direction: column;
+
+  &--gap-y-sm {
+    gap: map-get($spaces, "sm");
+  }
+
+  &--gap-y-md {
+    gap: map-get($spaces, "md");
+  }
+
+  &--gap-y-lg {
+    gap: map-get($spaces, "lg");
+  }
+}
