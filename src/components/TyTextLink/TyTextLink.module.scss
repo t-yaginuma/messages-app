@@ -1,5 +1,18 @@
 .ty-text-link {
-  font-size: map-get($fontSize, "md");
+  position: relative;
+  font-size: map-get($fontSizes, "md");
+  text-decoration: none;
+  color: map-get($colors, "link-text");
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -1px;
+    left: 0;
+    background-color: map-get($colors, "link-text");
+  }
 
   &:hover {
     opacity: 0.6;
