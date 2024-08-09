@@ -1,6 +1,6 @@
 .ty-text {
-  font-size: map-get($fontSize, "md");
+  font-size: map-get($fontSizes, "md");
   &--error {
-    color: map-get($color, "error");
+    color: map-get($colors, "error");
   }
 }

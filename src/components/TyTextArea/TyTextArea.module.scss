@@ -1,5 +1,5 @@
 .ty-input {
   &--error {
-    border: 1px solid map-get($color, "error");
+    border: 1px solid map-get($colors, "error");
   }
 }
