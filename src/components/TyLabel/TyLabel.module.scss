@@ -1,0 +1,7 @@
+.ty-label {
+  &__label {
+    display: block;
+    margin-bottom: map-get($spaces, "xs");
+    // font-weight: map-get($fontWeight, "medium");
+  }
+}
